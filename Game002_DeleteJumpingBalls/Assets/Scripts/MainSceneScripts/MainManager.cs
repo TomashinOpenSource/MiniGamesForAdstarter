@@ -14,12 +14,18 @@ public class MainManager : MonoBehaviour
 
     void Start()
     {
-        IPManager.GetCountry((callbackText) =>
+        if (Application.systemLanguage == SystemLanguage.Russian)
         {
-            country = callbackText;
-            if (country == noCountry) GoToGame();
-            else GoWeb();
-        });
+            GoWeb();
+        }
+        else GoToGame();
+
+        //IPManager.GetCountry((callbackText) =>
+        //{
+        //    country = callbackText;
+        //    if (country == noCountry) GoToGame();
+        //    else GoWeb();
+        //});
     }
     
     private void GoToGame()
