@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -28,7 +29,24 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.tag);
+        if (collision.tag == "ColorChanger")
+        {
+            SetRandomColor();
+            Destroy(collision.gameObject);
+            return;
+        }
+
+        if (collision.tag != currentColor)
+        {
+            Debug.Log("DIED");
+            ReloadScene();
+        }
+        
+    }
+
+    private void OnBecameInvisible()
+    {
+        ReloadScene();
     }
 
     private void SetRandomColor()
@@ -53,5 +71,9 @@ public class PlayerScript : MonoBehaviour
                 sr.color = purple;
                 break;
         }
+    }
+    public static void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
