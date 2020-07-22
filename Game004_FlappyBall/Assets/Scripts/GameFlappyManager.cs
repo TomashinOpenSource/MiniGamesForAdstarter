@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameFlappyManager : MonoBehaviour
 {
@@ -33,5 +34,10 @@ public class GameFlappyManager : MonoBehaviour
             Instantiate(pipes, position, Quaternion.identity);
             yield return new WaitForSeconds(2.0F);
         }
+    }
+
+    public void ResetButtonPressed()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 }
