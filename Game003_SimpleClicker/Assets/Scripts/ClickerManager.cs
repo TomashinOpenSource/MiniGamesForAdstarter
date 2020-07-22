@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ClickerManager : MonoBehaviour
@@ -23,5 +24,10 @@ public class ClickerManager : MonoBehaviour
     {
         count++;
         countText.text = count.ToString();
+    }
+
+    public void ResetButtonPressed()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 }
