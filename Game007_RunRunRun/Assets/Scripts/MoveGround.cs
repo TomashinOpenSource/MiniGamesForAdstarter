@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveGround : MonoBehaviour
 {
@@ -27,5 +28,9 @@ public class MoveGround : MonoBehaviour
     {
         grounds[0] = second;
         grounds[1] = first;
+    }
+    public void ResetButtonPressed()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 }

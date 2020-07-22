@@ -76,4 +76,9 @@ public class PlayerScript : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void ResetButtonPressed()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
 }
