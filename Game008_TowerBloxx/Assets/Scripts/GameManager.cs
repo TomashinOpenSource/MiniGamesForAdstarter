@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             ThrowFloor();
-            Camera.main.transform.position += Vector3.up * floorPrefab.transform.localScale.y;
+            StartCoroutine(WaitTime());
+            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, lookAtObject.transform.position, Time.deltaTime);
         }
     }
 
@@ -44,6 +45,11 @@ public class GameManager : MonoBehaviour
         lookAtObject = c.gameObject;
         GameObject floor = Instantiate(floorPrefab, HouseHolder);
         floor.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+    }
+
+    private IEnumerator WaitTime()
+    {
+        yield return new WaitForSeconds(2f);
     }
     
 }
