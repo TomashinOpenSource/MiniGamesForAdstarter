@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             ThrowFloor();
+            Camera.main.transform.position += Vector3.up * floorPrefab.transform.localScale.y;
         }
     }
 
@@ -42,7 +43,9 @@ public class GameManager : MonoBehaviour
         Transform c = HouseHolder.GetChild(0);
         c.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         c.gameObject.transform.parent = null;
+        c.position -= Vector3.up * floorPrefab.transform.localScale.y / 2;
         lookAtObject = c.gameObject;
+        Debug.Log(c.localScale);
 
         GameObject floor = Instantiate(floorPrefab, HouseHolder);
         floor.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
