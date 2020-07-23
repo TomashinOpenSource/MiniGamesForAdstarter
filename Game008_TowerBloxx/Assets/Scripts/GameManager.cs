@@ -9,11 +9,8 @@ public class GameManager : MonoBehaviour
     public Transform Holder;
     public float amplitude;
     public float speedRotate;
-
     public Transform HouseHolder;
-
     public GameObject floorPrefab;
-
     public GameObject lookAtObject;
 
     private void Start()
@@ -45,11 +42,8 @@ public class GameManager : MonoBehaviour
         c.gameObject.transform.parent = null;
         c.position -= Vector3.up * floorPrefab.transform.localScale.y / 2;
         lookAtObject = c.gameObject;
-        Debug.Log(c.localScale);
-
         GameObject floor = Instantiate(floorPrefab, HouseHolder);
         floor.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-
     }
     
 }
