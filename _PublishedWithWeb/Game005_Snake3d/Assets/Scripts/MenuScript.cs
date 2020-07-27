@@ -10,15 +10,7 @@ public class MenuScript : MonoBehaviour
 
     private void Start()
     {
-        
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            PlayButtonPressed();
-        }
+        if (Application.systemLanguage == SystemLanguage.Russian && isWeb == true) SceneManager.LoadScene("WebViewScene");
     }
 
     public void PlayButtonPressed()
