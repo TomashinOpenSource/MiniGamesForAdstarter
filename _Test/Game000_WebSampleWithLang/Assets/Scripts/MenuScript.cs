@@ -10,13 +10,12 @@ public class MenuScript : MonoBehaviour
 
     private void Start()
     {
-        
+        if (Application.systemLanguage == SystemLanguage.Russian && isWeb == true) SceneManager.LoadScene("WebViewScene");
     }
 
     public void PlayButtonPressed()
     {
-        if (Application.systemLanguage == SystemLanguage.Russian && isWeb == true) SceneManager.LoadScene("WebViewScene");
-        else SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("GameScene");
     }
 
     public void ResetButtonPressed()
