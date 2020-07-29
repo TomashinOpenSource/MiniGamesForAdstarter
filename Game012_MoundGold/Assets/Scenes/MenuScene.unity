@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d57d989e1776da4783fc6c2646a41aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notificationID: 
+  notificationID: 02250e3b-784f-4a1e-8bac-e0a72b89e98c
 --- !u!115 &833465685
 MonoScript:
   m_ObjectHideFlags: 0
