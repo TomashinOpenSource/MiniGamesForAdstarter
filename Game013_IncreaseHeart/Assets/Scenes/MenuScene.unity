@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e704a0da7e4e842876429f25804dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWeb: 1
+  isWeb: 0
 --- !u!114 &26837518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0428\u041B\u0418 \u0421\u0415\u0420\u0414\u0415\u0427\u041A\u0418"
+  m_Text: "Les c\u0153urs marchaient"
 --- !u!222 &1266692317
 CanvasRenderer:
   m_ObjectHideFlags: 0
