@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DeceptiveUiCasinoBoost : MonoBehaviour
+public class BoostManager : MonoBehaviour
 {
     public GameObject LoadingObject;
     public Transform parentForLoad;
