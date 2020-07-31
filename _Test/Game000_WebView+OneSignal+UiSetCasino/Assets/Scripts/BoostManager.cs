@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BoostManager : MonoBehaviour
 {
     public GameObject LoadingObject;
-    public Transform parentForLoad;
+    public Transform loadPanel, completePanel;
 
     private Vector2 _target;
     private float _heightUp;
@@ -16,12 +17,16 @@ public class BoostManager : MonoBehaviour
 
     private int currentStep;
 
+    public Slider multipleSlider;
+    public TMP_Text multipleCount, multipleText;
+
     void Start()
     {
+        if (completePanel.gameObject.activeSelf) completePanel.gameObject.SetActive(false);
         allLoadingObjects = new List<GameObject>();
         _heightUp = LoadingObject.GetComponent<RectTransform>().sizeDelta.y * 1.5f;
         _target = new Vector2(0f, _heightUp);
-        SetTexts();
+        SetLoadTexts();
         currentStep = 0;
         StartCoroutine(SpawnObjects(LoadingObject));
     }
@@ -32,7 +37,7 @@ public class BoostManager : MonoBehaviour
         if (currentStep < loadTexts.Count)
         {
             Debug.Log(currentStep);
-            GameObject gameObject = Instantiate(_object, parentForLoad);
+            GameObject gameObject = Instantiate(_object, loadPanel);
             allLoadingObjects.Add(gameObject);
 
             Slider _slider = gameObject.GetComponent<LoadingInfoInObject>().slider;
@@ -47,6 +52,10 @@ public class BoostManager : MonoBehaviour
             currentStep++;
             StartCoroutine(SpawnObjects(LoadingObject));
         }
+        else
+        {
+            StartCoroutine(StartComplete());
+        }
     }
     private void UpAll(List<GameObject> gameObjects)
     {
@@ -56,7 +65,7 @@ public class BoostManager : MonoBehaviour
         }
     }
 
-    private void SetTexts()
+    private void SetLoadTexts()
     {
         loadTexts.Add("Подбираем сервер на основе статистики игр за сутки");
         loadTexts.Add("Запускаем виртуализацию браузера для обхода истории подключения");
@@ -73,5 +82,32 @@ public class BoostManager : MonoBehaviour
         loadTexts.Add("Отбираем слоты с максимальным процентом выигрыша на основе наших статитических данных и логирования подключений");
         loadTexts.Add("Пропускаем плохие комбинации алгоритмом Метрополиса-Гастингса");
         Debug.Log(loadTexts.Count);
+    }
+
+    public void StartButtonPressed()
+    {
+        SceneManager.LoadScene("WebViewScene");
+    }
+
+    private IEnumerator StartComplete()
+    {
+        multipleText.text = "";
+        loadPanel.gameObject.SetActive(false);
+        completePanel.gameObject.SetActive(true);
+        multipleSlider.minValue = 0f; multipleSlider.value = multipleSlider.minValue; multipleSlider.maxValue = 5f;
+        float currentMultiple = Random.Range(multipleSlider.maxValue - multipleSlider.maxValue / 10f, multipleSlider.maxValue);
+        Debug.Log(currentMultiple);
+
+        do
+        {
+            multipleSlider.value += Random.Range(multipleSlider.maxValue / 40f, multipleSlider.maxValue / 20f);
+            multipleCount.text = multipleSlider.value.ToString("0.00");
+            yield return new WaitForSeconds(0.1f);
+        } while (multipleSlider.value <= currentMultiple);
+
+        multipleText.text = "Максимальная вероятность выигрыша будет увеличена в " + multipleSlider.value.ToString("0.00") + " раз!";
+
+        yield return new WaitForSeconds(3f);
+        //StartButtonPressed();
     }
 }
