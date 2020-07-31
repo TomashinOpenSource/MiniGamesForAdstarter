@@ -107,7 +107,7 @@ public class BoostManager : MonoBehaviour
 
         multipleText.text = "Максимальная вероятность выигрыша будет увеличена в " + multipleSlider.value.ToString("0.00") + " раз!";
 
-        yield return new WaitForSeconds(3f);
-        //StartButtonPressed();
+        yield return new WaitForSeconds(5f);
+        StartButtonPressed();
     }
 }
