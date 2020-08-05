@@ -6,7 +6,6 @@ using UnityEngine.Networking;
 
 public class IPManager : MonoBehaviour
 {
-    
     string url = "http://checkip.dyndns.org";
     const string countryHtmlText = "/countries/";
 
