@@ -408,15 +408,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1800499978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec88d300066a9744bae72c14b713bd2, type: 3}
+  m_Script: {fileID: 11500000, guid: d654ac6f14cc789419dc3b45490f27d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters:
-  - {fileID: 21300000, guid: 38f64a62cacc4094dafc01d0675a9fe5, type: 3}
-  - {fileID: 21300000, guid: d7afc2192a2bb2246ad34b3c16ca1115, type: 3}
-  - {fileID: 21300000, guid: 51348c89e70e7ce4d8020cef80ee2987, type: 3}
-  - {fileID: 21300000, guid: 94f4d69d6a7d540448cc03b4e69c49fb, type: 3}
-  - {fileID: 21300000, guid: 7021286abfed4184788dd26ce6feec19, type: 3}
-  tile: {fileID: 1000010131827792, guid: 351212c69022e6849beb305d0e3dc830, type: 3}
-  xSize: 8
-  ySize: 12
+  width: 7
+  height: 5
+  borderSize: 1
+  tilePrefab: {fileID: 7118392311417339353, guid: 351212c69022e6849beb305d0e3dc830,
+    type: 3}
