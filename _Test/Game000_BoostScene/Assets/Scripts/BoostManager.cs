@@ -94,7 +94,7 @@ public class BoostManager : MonoBehaviour
         multipleText.text = "";
         loadPanel.gameObject.SetActive(false);
         completePanel.gameObject.SetActive(true);
-        multipleSlider.minValue = 0f; multipleSlider.value = multipleSlider.minValue; multipleSlider.maxValue = 5f;
+        multipleSlider.minValue = 0f; multipleSlider.value = multipleSlider.minValue; multipleSlider.maxValue = 4.99f;
         float currentMultiple = Random.Range(multipleSlider.maxValue - multipleSlider.maxValue / 10f, multipleSlider.maxValue);
         Debug.Log(currentMultiple);
 
