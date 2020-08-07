@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30368d890e6e14e4f8dcafa9212820c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OneSignalAppID: 4f370d1b-2f19-4145-b3ed-502c97078bb7
+  OneSignalAppID: '4f370d1b-2f19-4145-b3ed-502c97078bb7 '
 --- !u!114 &304641348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6ab2ff034573064449b8c5466739fa23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aae8c4bea03b8aa47814af68b1dea886, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
