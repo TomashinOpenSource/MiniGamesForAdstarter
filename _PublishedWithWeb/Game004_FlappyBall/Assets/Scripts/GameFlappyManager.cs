@@ -31,6 +31,7 @@ public class GameFlappyManager : MonoBehaviour
         {
             position = transform.position;
             position.x += 6.0F;
+            position.y -= 4.5F;
             Instantiate(pipes, position, Quaternion.identity);
             yield return new WaitForSeconds(2.0F);
         }
