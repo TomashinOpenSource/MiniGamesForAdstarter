@@ -8,9 +8,7 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = System.Random;
 
-/// <summary>
-/// coder by shlifedev(zero is black)
-/// </summary>
+
 public class Board : MonoBehaviour
 {
     public enum State
@@ -40,7 +38,7 @@ public class Board : MonoBehaviour
 
     public void OnGameOver()
     {
-       Debug.Log("Game Over!!!!");
+       Debug.Log("Game Over!");
     }
     private void CreateBoard()
     {
@@ -125,7 +123,6 @@ public class Board : MonoBehaviour
 
     public void Move(Node from, Node to)
     {
-//        Debug.Log($"TRY MOVE {from.point} , {to.point}");
         to.value = from.value;
         from.value = null;  
         if (from.realNodeObj != null)
@@ -140,10 +137,6 @@ public class Board : MonoBehaviour
         }
     }
  
-    /// <summary>
-    /// Move Blocks by User Input.
-    /// </summary>
-    /// <param name="dir"></param>
     public void MoveTo(Node.Direction dir)
     {
         if (dir == Node.Direction.RIGHT)

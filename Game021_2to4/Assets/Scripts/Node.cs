@@ -8,7 +8,7 @@ public class  Node
 {
     /// <summary>
     /// initialize node data, array size must be set '4'
-    /// </summary> 
+    /// </summary>
     public Node(Vector2Int?[] foundedLinkedNode)
     {
         linkedNode = foundedLinkedNode;

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -21,63 +18,13 @@ public class NodeObject : MonoBehaviour
         {
             this.m_value = value;
             this.valueText.text = value.ToString();
-            SetColor(value);
         }
     }
 
     public Image blockImage;
-    public TextMeshProUGUI valueText;
+    public TMP_Text valueText;
 
-    private void SetColor(int value)
-    {
-        Color color = new Color(1f, 0.42f, 0.42f);
-        
-        
-        switch (value)
-        {
-            case 2:
-                color = new Color(0.14f, 0.62f, 1f); 
-                break;
-            case 4:
-                color = new Color(0.14f, 0.62f, 1f);
-               
-                break;
-            case 8:
-                color = new Color(1f, 0.45f, 0f);
-                break;
-            case 16:
-                color = new Color(1f, 0.45f, 0f);
-                break;
-            case 32: 
-                color = new Color(1f, 0.42f, 0.42f);
-                break;
-            case 64: 
-                color = new Color(1f, 0.42f, 0.42f);
-                break;
-            case 128:
-                color = new Color(1f,0.35f, 0.35f);
-                break;
-            case 256:
-                color = new Color(1f,0.35f, 0.35f);
-                break;
-            case 512:
-                color = new Color(1f, 0.15f, 0.15f);
-                break;
-            case 1024:
-                color = new Color(1f, 0.15f, 0.15f);
-                break;
-            case 2048:
-                color = new Color(1f, 0, 0);
-                break;
-            case 4096:
-                color = new Color(1f, 0, 0);
-                break;
-                color = Color.black;
-                break;
-        }
-
-        blockImage.color = color;
-    }
+  
     public void InitializeFirstValue()
     {
         int[] v = new int[] {2, 4}; 
