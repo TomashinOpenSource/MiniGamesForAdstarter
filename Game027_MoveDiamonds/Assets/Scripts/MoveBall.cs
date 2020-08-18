@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoveBall : MonoBehaviour
 {
+    public Slider slider;
+
     TextAsset file;
     List<Vector3> Directions;
     public bool moving;
@@ -18,12 +21,18 @@ public class MoveBall : MonoBehaviour
     {
         Directions = new List<Vector3>();
         ReadJson();
+
+        slider.maxValue = Directions.Count - 1;
+        slider.minValue = 0;
+        slider.value = slider.minValue;
     }
 
 
     void Update()
     {
-        
+        target = Directions[(int)slider.value];
+        transform.position = Vector3.MoveTowards(transform.position, target, 1);
+        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, -10f);
     }
 
     public void ReadJson()
@@ -34,7 +43,7 @@ public class MoveBall : MonoBehaviour
             Directions.Add(new Vector3(_points.x[i], _points.y[i], _points.z[i]));
         }
 
-        StartCoroutine(Moving(Directions));
+        //StartCoroutine(Moving(Directions));
     }
 
     public IEnumerator Moving(List<Vector3> d)
