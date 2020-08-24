@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private GameObject lavaObject;
+    private GameObject WaterObj;
     private float rad;
     private Vector3 pos1, pos2, target;
     private Transform cubeHolder;
@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        lavaObject = GameObject.Find("Lava");
-        cubeHolder = lavaObject.transform.GetChild(0);
+        WaterObj = GameObject.Find("Water");
+        cubeHolder = WaterObj.transform.GetChild(0);
         rad = 10;
         pos1 = new Vector3(0f, 0.25f, -rad / 2);
         pos2 = new Vector3(0f, 0.25f, rad / 2);
