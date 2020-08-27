@@ -125,6 +125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tails: []
   boneDist: 0.5
-  bonePrefab: {fileID: 5405277685122411887, guid: a69db962b1a048942ac556dd325af975,
+  bonePrefab: {fileID: 100389071475472458, guid: 197ada0fa4bfcd94bbddba5aed1f2214,
     type: 3}
   speed: 0.05

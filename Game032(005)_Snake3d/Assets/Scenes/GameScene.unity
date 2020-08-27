@@ -575,12 +575,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4006293124096950819, guid: d17fd12a0d91278429ab5cd9e8bf4173,
-        type: 3}
-      propertyPath: bonePrefab
-      value: 
-      objectReference: {fileID: 100389071475472458, guid: 197ada0fa4bfcd94bbddba5aed1f2214,
-        type: 3}
     - target: {fileID: 4989658980963482669, guid: d17fd12a0d91278429ab5cd9e8bf4173,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -589,7 +583,7 @@ PrefabInstance:
     - target: {fileID: 4989658980963482669, guid: d17fd12a0d91278429ab5cd9e8bf4173,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4989658980963482669, guid: d17fd12a0d91278429ab5cd9e8bf4173,
         type: 3}
