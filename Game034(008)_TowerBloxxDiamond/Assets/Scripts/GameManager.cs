@@ -11,13 +11,12 @@ public class GameManager : MonoBehaviour
     public float speedRotate;
     public Transform HouseHolder;
     public GameObject floorPrefab;
-    public GameObject lookAtObject;
+    public Transform target;
 
     private void Start()
     {
         Holder = null ?? GameObject.Find("Holder").transform;
         HouseHolder = null ?? GameObject.Find("HouseHolder").transform;
-        lookAtObject = Camera.main.gameObject;
     }
 
     private void Update()
@@ -25,9 +24,7 @@ public class GameManager : MonoBehaviour
         RotateObject(Holder, speedRotate, amplitude);
         if (Input.GetMouseButtonDown(0))
         {
-            ThrowFloor();
-            StartCoroutine(WaitTime());
-            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, lookAtObject.transform.position, Time.deltaTime);
+            StartCoroutine(ThrowFloor());
         }
     }
 
@@ -36,20 +33,17 @@ public class GameManager : MonoBehaviour
         t.eulerAngles = new Vector3(0, 0, Mathf.Sin(Time.time * s) * a);
     }
 
-    private void ThrowFloor()
+    private IEnumerator ThrowFloor()
     {
         Transform c = HouseHolder.GetChild(0);
         c.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         c.gameObject.transform.parent = null;
         c.position -= Vector3.up * floorPrefab.transform.localScale.y / 2;
-        lookAtObject = c.gameObject;
         GameObject floor = Instantiate(floorPrefab, HouseHolder);
         floor.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        yield return new WaitForSeconds(1);
+        Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, c.transform.position.y + c.localScale.y, Camera.main.transform.position.z);
     }
 
-    private IEnumerator WaitTime()
-    {
-        yield return new WaitForSeconds(2f);
-    }
     
 }
