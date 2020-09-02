@@ -198,7 +198,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -214,19 +213,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4c5f9d4e353a1408edaa7ffd3cd718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 519420031}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -340,7 +326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 753e192d26aa93949a53a756d39c893c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38a0ed41338073a44b3907ab8f327145, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -408,9 +394,9 @@ MonoBehaviour:
   objectMaxX: 2.5
   objectY: -5.5
   objectSprites:
-  - {fileID: 7207882119082248946, guid: 901c5e710feddfd48a836db3a1307058, type: 3}
-  - {fileID: -7817259731008224619, guid: 901c5e710feddfd48a836db3a1307058, type: 3}
-  - {fileID: 8459430566571322924, guid: 901c5e710feddfd48a836db3a1307058, type: 3}
+  - {fileID: 21300000, guid: bf00b6bf4dd91584595cd8d0810d1f2d, type: 3}
+  - {fileID: 21300000, guid: 32f7634411519ae489f1f9c5da271f64, type: 3}
+  - {fileID: 21300000, guid: 0385e08314185a145a2ee46fa3ebb2ce, type: 3}
 --- !u!1 &1806102672
 GameObject:
   m_ObjectHideFlags: 0
