@@ -27,4 +27,6 @@ public class Spawn : MonoBehaviour
             countText.text = count.ToString();
         }
     }
+
+
 }
